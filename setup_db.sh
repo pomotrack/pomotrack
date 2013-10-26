@@ -1,6 +1,4 @@
-#!/bin/bash
+#!/bincddcd/bash
 # Setup script for pgsql database
-
-createuser pomotrack
-createdb pomotrack
-cat 0.1.0.sql | psql pomotrack
+cat setup.sql | psql template1
+cat 0.1.0.sql | psql pomotrack -U pomotrack -W
