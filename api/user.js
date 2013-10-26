@@ -47,7 +47,7 @@
                         if (err) {
                             console.log(err);
                         } else {
-                            res.send(result);
+                            res.send(result.rows[0]);
                         }
                     });
             }
