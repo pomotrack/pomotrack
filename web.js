@@ -1,12 +1,16 @@
-var express = require("express");
-var app = express();
-app.use(express.logger());
+var restify = require('restify');
 
-app.get('/', function(request, response) {
-  response.send('Hello World!');
+var server = restify.createServer();
+server.use(restify.bodyParser());
+server.use(restify.requestLogger());
+
+var pomodoro = require('./api/pomodoro.js');
+server.get('/pomodoro/:name', pomodoro.get);
+
+server.get('/', function(req, res, next) {
+    res.send({'hello': 'world'});
+    return next();
 });
 
 var port = process.env.PORT || 5000;
-app.listen(port, function() {
-  console.log("Listening on " + port);
-});
+server.listen(port);
