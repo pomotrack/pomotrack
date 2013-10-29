@@ -1,18 +1,21 @@
 (function() {
 
-    module.exports.get = function (req, res, next) {
+    var pg = require('pg');
+    var conn_params = require('./db.js');
+
+    module.exports.get = function (req, res) {
 
     };
 
-    module.exports.post = function (req, res, next) {
+    module.exports.post = function (req, res) {
 
     };
 
-    module.exports.put = function (req, res, next) {
+    module.exports.put = function (req, res) {
 
     };
 
-    module.exports.del = function (req, res, next) {
+    module.exports.del = function (req, res) {
 
     };
 
